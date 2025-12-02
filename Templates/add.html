@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Numbers</title>
+    <style>
+        body{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .add {
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: azure;
+            border: 2px slategray solid;
+            padding: 10px;
+        }
+        input{
+            text-decoration: none;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        button{
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .form{
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body> <h2>Add Two Numbers</h2>
+    <div class="add">
+       
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="num1" placeholder="Enter first number" required>
+        <input type="number" name="num2" placeholder="Enter second number" required>
+        <button type="submit">Add</button>
+    </form>
+
+    {% if result != None %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+    </div>
+</body>
+</html>
